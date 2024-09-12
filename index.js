@@ -29,4 +29,11 @@ app.use(express.json());
 app.use("/auth",require('./Routes/auth'))
 
 //para el admin
-//app.use("/admin",require('./Routes/admin'))
+app.use("/admin",require('./Routes/admin'))
+
+
+//para fondos comunes
+app.use("/funds", require('./Routes/mutualFund'));
+
+//ruta para transacciones
+app.use("/transactions", require('./Routes/transactions'));

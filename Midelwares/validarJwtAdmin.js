@@ -14,9 +14,9 @@ const validarJWTAdmin = (req, res, next) => {
     try {
         const payload = jwt.verify(token, process.env.SECRET_JWT);
         if (payload.rol != 'admin') {
-            return res.status(404).json({
+            return res.status(401).json({
                 ok: false,
-                msg: 'usted no tiene rol de administrador',
+                msg: 'usted no esta autorizado',
             });
         }
 

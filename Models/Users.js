@@ -1,16 +1,23 @@
 const { model, Schema } = require('mongoose')
 
 const userSchema = Schema({//aquia claramos los datos que se van a tomar
+   
+    email: {
+        type: String,
+        require: true,
+        unique: true,
+    },
 
     userName: {
         type: String,
         require: true
     },
-    aliasBN: {
+
+    lastName: {
         type: String,
-        require: true,
-        unique: true,
+        require: true
     },
+   
     rol: {
         type: String,
         default:"user"
